@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to set desktop background for students
+# Script to set desktop background
 
 # Author : r.purves@arts.ac.uk
 # Version 1.0 : Initial Version
