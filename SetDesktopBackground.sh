@@ -2,7 +2,7 @@
 
 # Script to set desktop background
 
-# Author : r.purves@arts.ac.uk
+# Author : contact@richard-purves.com
 # Version 1.0 : Initial Version
 # Version 1.1 : 23/04/2014 - Massive reworking to use applescript for 10.8 and below, modify the db for 10.9+
 
@@ -26,14 +26,14 @@ if [[ "$OSversion" -ge "9" ]];
 then
 
 sqlite3 /Users/$currentuser/Library/Application\ Support/Dock/desktoppicture.db << EOF
-UPDATE data SET value = "/Users/Shared/Background/UALcustombg.jpeg";
+UPDATE data SET value = "/Users/Shared/Background/custom.jpeg";
 .quit
 EOF
 	
 killall Dock
 
 else
-su -l $currentuser -c 'osascript -e "tell application \"System Events\" to set picture of every desktop to \"/Users/Shared/Background/UALcustombg.jpeg\""'
+su -l $currentuser -c 'osascript -e "tell application \"System Events\" to set picture of every desktop to \"/Users/Shared/Background/custom.jpeg\""'
 fi
 
 else
@@ -42,14 +42,14 @@ if [[ "$OSversion" -ge "9" ]];
 then
 
 sqlite3 /Users/$currentuser/Library/Application\ Support/Dock/desktoppicture.db << EOF
-UPDATE data SET value = "/Library/Desktop Pictures/UAL/ual_default_grey2560x1600.jpeg";
+UPDATE data SET value = "/Library/Desktop Pictures/default_grey2560x1600.jpeg";
 .quit
 EOF
 
 killall Dock
 
 else
-su -l $currentuser -c 'osascript -e "tell application \"System Events\" to set picture of every desktop to \"/Library/Desktop\ Pictures/UAL/ual_default_grey2560x1600.jpeg\""'
+su -l $currentuser -c 'osascript -e "tell application \"System Events\" to set picture of every desktop to \"/Library/Desktop\ Pictures/default_grey2560x1600.jpeg\""'
 fi
 
 fi
